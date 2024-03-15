@@ -7,13 +7,15 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.4/tiny-slider.css">
     <link rel="stylesheet" href="./dist/css/main.min.css">
     <link rel="stylesheet"href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
   </head>
   <body>
     <div class="main__wrapper">
     <header class="header">
       <div class="header__wrapper">
-      <a href="#"
-        ><img src="./scss/images/logo.png" alt=""/></a>
+        <div class="header__logo">
+     <img src="./scss/images/logo.png" alt=""/>
+    </div>
         <ul>
           <li><a href="#">Home</a></li>
           <li><a href="#">About</a></li>
@@ -37,7 +39,7 @@
 
       <section class="shopinfo">
         <div class="container">
-          <div class="shopinfo__wrapper">
+          <div class="shopinfo__wrapper"data-aos="flip-up">
             <div class="shopinfo__card">
               <h2>Complete Services</h2>
               <li><i class="fa-solid fa-gear"></i></li>
@@ -74,7 +76,7 @@
 
         <section class="services">
         <div class="container">
-<div class="services__wrapper">
+<div class="services__wrapper"data-aos="fade-down">
           <div class="services__title">
             <h2>SERVICES</h2>
           </div>
@@ -142,7 +144,7 @@
 
               <section class="whatwhy">
                 <div class="container">
-                  <div class="whatwhy__wrapper">
+                  <div class="whatwhy__wrapper"data-aos="zoom-in">
                     <div class="whatwhy__wrapper__left">
                       <h2>WHAT WE DO?</h2>
                       <p class="left-one">Cubilipende sollicitudineied leo pharea aumennec in velit veaugn erase dialor innia est. Proin dictum elemum velit terdpibus sceleue vitaepeecon eoc in vel ipsum auctorulvinaroin ullamcorper u et felisestiulis lacinia est.</p>
@@ -223,5 +225,9 @@
                 },
               });
         </script>
+          <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+          <script>
+            AOS.init();
+          </script>
   </body>
 </html>

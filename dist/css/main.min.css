@@ -96,7 +96,6 @@ p {
 
 .container {
   max-width: 98rem;
-  padding: 0 1.6rem;
   margin: 0 auto;
 }
 
@@ -482,27 +481,35 @@ p {
 }
 
 .tns-controls {
-  display: flex;
-  justify-content: end;
-  align-items: center;
-  margin: 2rem 0;
-  gap: 0.5rem;
+  display: none;
 }
-.tns-controls button {
-  background: var(--light);
-  border: none;
-  font-size: 1.3rem;
-  margin-bottom: 2rem;
-  line-height: 1em;
-  transition: 0.4s all ease;
-  color: #f8565d;
-  width: 43px;
-  height: 43px;
-  display: inline-block;
-  /* background: #fff; */
-  text-align: center;
-  border-radius: 500px;
-  border: 2px solid #fff;
+@media (min-width: 42rem) {
+  .tns-controls {
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    margin: 2rem 0;
+    gap: 0.5rem;
+  }
+  .tns-controls button {
+    background: var(--light);
+    border: none;
+    font-size: 1.3rem;
+    margin-bottom: 2rem;
+    line-height: 1em;
+    transition: 0.4s all ease;
+    color: #f8565d;
+    width: 43px;
+    height: 43px;
+    display: inline-block;
+    /* background: #fff; */
+    text-align: center;
+    border-radius: 500px;
+    border: 2px solid #fff;
+  }
+  .tns-controls button:hover {
+    background: black;
+  }
 }
 
 body {
@@ -510,18 +517,27 @@ body {
 }
 
 .main__wrapper {
-  width: 80%;
+  width: 100%;
   margin: 0 auto;
+}
+@media (min-width: 42rem) {
+  .main__wrapper {
+    width: 80%;
+    margin: 0 auto;
+  }
 }
 
 .banner {
   background: #343438;
   margin: 2.5% 0;
-  padding: 4rem;
+  left: 0;
+  right: 0;
 }
 .banner__wrapper img {
-  height: auto;
-  width: auto;
+  height: 100%;
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 .container {
@@ -530,21 +546,35 @@ body {
 }
 
 .header__wrapper {
-  margin-top: 5rem;
+  margin-top: 2rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 .header__wrapper ul {
-  font-family: ubuntu-bold;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 5rem;
+  display: none;
 }
-.header__wrapper ul a {
-  color: #fff;
-  font-size: 3rem;
+@media (min-width: 42rem) {
+  .header__wrapper ul {
+    font-family: ubuntu-bold;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 5rem;
+  }
+  .header__wrapper ul a {
+    color: #fff;
+    font-size: 2rem;
+    text-transform: uppercase;
+  }
+}
+.header__logo img {
+  max-width: 50%;
+}
+@media (min-width: 42rem) {
+  .header__logo img {
+    max-width: 75%;
+  }
 }
 
 .shopinfo {
@@ -585,8 +615,12 @@ body {
   padding: 10px 32px;
   border: none;
   font-size: 2rem;
+  margin-bottom: 3rem;
   background-color: #f8565d;
   color: var(--light);
+}
+.shopinfo__wrapper button:hover {
+  background: black;
 }
 
 .whatwhy {
@@ -595,6 +629,7 @@ body {
   padding: 4rem;
 }
 .whatwhy__wrapper {
+  text-align: center;
   display: grid;
   grid-template-columns: repeat(1, 1fr);
   grid-gap: 1rem;
@@ -605,36 +640,36 @@ body {
     grid-template-columns: repeat(2, 1fr);
     grid-gap: 1rem;
   }
-}
-.whatwhy__wrapper__left {
-  font-family: ubuntu-bold;
-  line-height: 2;
-  padding-right: 10rem;
-}
-.whatwhy__wrapper__left h2 {
-  font-family: ubuntu-bold;
-  color: #26252a;
-  border-bottom: 1px solid #d9d9db;
-}
-.whatwhy__wrapper__left p.left-one {
-  border-bottom: 1px solid #d9d9db;
-}
-.whatwhy__wrapper__right {
-  font-family: ubuntu-bold;
-  line-height: 2;
-  padding-right: 10rem;
-}
-.whatwhy__wrapper__right h2 {
-  font-family: ubuntu-bold;
-  color: #26252a;
-  border-bottom: 1px solid #d9d9db;
-}
-.whatwhy__wrapper__right p.right-1 {
-  border-bottom: 1px solid #d9d9db;
-}
-.whatwhy__wrapper__right p.right-2 {
-  border-bottom: 1px solid #d9d9db;
-  color: #f8565d;
+  .whatwhy__wrapper__left {
+    font-family: ubuntu-bold;
+    line-height: 2;
+    padding-right: 5rem;
+  }
+  .whatwhy__wrapper__left h2 {
+    font-family: ubuntu-bold;
+    color: #26252a;
+    border-bottom: 1px solid #d9d9db;
+  }
+  .whatwhy__wrapper__left p.left-one {
+    border-bottom: 1px solid #d9d9db;
+  }
+  .whatwhy__wrapper__right {
+    font-family: ubuntu-bold;
+    line-height: 2;
+    padding-right: 5rem;
+  }
+  .whatwhy__wrapper__right h2 {
+    font-family: ubuntu-bold;
+    color: #26252a;
+    border-bottom: 1px solid #d9d9db;
+  }
+  .whatwhy__wrapper__right p.right-1 {
+    border-bottom: 1px solid #d9d9db;
+  }
+  .whatwhy__wrapper__right p.right-2 {
+    border-bottom: 1px solid #d9d9db;
+    color: #f8565d;
+  }
 }
 
 .appointment {
@@ -643,7 +678,7 @@ body {
 }
 .appointment__wrapper h1 {
   color: #fff;
-  font-size: 10rem;
+  font-size: clamp(5rem, 6vw, 15rem);
   letter-spacing: 1rem;
   line-height: 1;
   text-transform: uppercase;
@@ -658,17 +693,22 @@ body {
 .appointment__wrapper .btn button {
   display: inline-block;
   margin-top: 49px;
-  padding: 16px 32px;
+  padding: 20px 32px;
   text-decoration: none;
   border: none;
   color: #fff;
   background: #f8565d;
   font-family: ubuntu-bold;
+  font-size: clamp 0.8rem, 2vw, 1.8rem;
+}
+.appointment__wrapper .btn button:hover {
+  background: #fff;
+  color: var(--dark);
 }
 .appointment__wrapper .btn li {
   list-style: none;
   margin-top: 57px;
-  font-size: 2rem;
+  font-size: 3rem;
   color: #fff;
 }
 
@@ -678,8 +718,15 @@ body {
 .footer__wrapper {
   font-family: ubuntu-bold;
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(1, 1fr);
   grid-gap: 1rem;
+}
+@media (min-width: 42rem) {
+  .footer__wrapper {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 1rem;
+  }
 }
 .footer__first p {
   opacity: 0.5;
@@ -700,6 +747,10 @@ body {
   border-radius: 500px;
   border: 2px solid #fff;
 }
+.footer__first ul a:hover {
+  background: #f8565d;
+  border: 2px solid #f8565d;
+}
 .footer__second p {
   color: #fff;
 }
@@ -717,7 +768,9 @@ body {
 }
 .services__title h2 {
   font-family: ubuntu-bold;
-  margin-top: 50px;
   padding-bottom: 18px;
   border-bottom: 1px solid #fa858a;
+}
+.services p {
+  text-align: center;
 }/*# sourceMappingURL=main.min.css.map */

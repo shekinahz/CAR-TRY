@@ -61,24 +61,32 @@
 
 body {
     background: $clr-primary;
+    
 }
 
 .main__wrapper {
-    width: 80%;
+    width: 100%;
     margin: 0 auto;
+
+    @include mediaQuery{
+        width: 80%;
+        margin: 0 auto;
+    }
 }
 
 .banner {
     background: $clr-secondary;
     margin: 2.5% 0;
-    padding: 4rem;
+    left: 0;
+    right: 0;
 
     &__wrapper{
         img{
-            height: auto;
-            width: auto;
+           @include imgCover(100%, 100%)
         }
+        
     }
+   
 }
 
 .container {
@@ -88,18 +96,33 @@ body {
 
 .header {
     &__wrapper {
-        margin-top: 5rem;
+        margin-top: 2rem;
         @include flex(space-between, center);
         ul {
+            
+                display: none;
+                @include mediaQuery{
             font-family: ubuntu-bold;
             @include flex(space-between, center);
             gap: 5rem;
             a{
                 color: $clr-white;
-                font-size: 3rem;
+                font-size: 2rem;
+                text-transform: uppercase;
             }
         }
     }
+    }
+    &__logo{
+        img{
+            max-width: 50%;
+        }
+        @include mediaQuery{
+            img{
+                max-width: 75%;
+            }
+        }
+}
 }
 
 .shopinfo{
@@ -109,6 +132,7 @@ body {
     &__wrapper {
         text-align: center;
         @include grid(1);
+        
         @include mediaQuery{
             @include grid(4);
         }
@@ -133,10 +157,14 @@ body {
             padding: 10px 32px;
             border: none;
             font-size: 2rem;
+            margin-bottom: 3rem;
            
             background-color: $clr-accent;
             color: $clr-light;
         
+        }
+        button:hover {
+            background: darken($clr-primary, 25);
         }
     }
 }
@@ -145,14 +173,17 @@ body {
     background-color: $clr-white;
     padding: 4rem;
     &__wrapper{
-        @include mediaQuery{
-            @include grid (2);
-        }
+        text-align: center;
         @include grid(1);
+       
+        @include mediaQuery{
+            @include grid (2);         
+        
         &__left{
+        
             font-family: ubuntu-bold;
             line-height: 2;
-            padding-right: 10rem;
+            padding-right: 5rem;
             h2{
                 font-family: ubuntu-bold;
                 color: $clr-primary;
@@ -161,12 +192,13 @@ body {
             p.left-one{
                 border-bottom: 1px solid #d9d9db;
             }
+            
         }
 
         &__right{
             font-family: ubuntu-bold;
             line-height: 2;
-            padding-right: 10rem;
+            padding-right: 5rem;
             h2{
                 font-family: ubuntu-bold;
                 color: $clr-primary;
@@ -182,6 +214,7 @@ body {
         }
     }
 }
+}
 
 .appointment{
     background-color: $clr-secondary;
@@ -190,7 +223,7 @@ body {
     &__wrapper{
         h1{
             color: $clr-white;
-            font-size: 10rem;
+            font-size: clamp(5rem,6vw, 15rem);
            letter-spacing: 1rem;
             line-height: 1;
             text-transform: uppercase;
@@ -202,18 +235,26 @@ body {
             button{
                 display: inline-block;
                 margin-top: 49px; 
-                padding: 16px 32px; 
+                padding: 20px 32px; 
                 text-decoration: none;
                 border: none;
                 color: #fff;
                 background: #f8565d;
                 font-family: ubuntu-bold;
+                font-size: clamp (.8rem, 2vw, 1.8rem);
+
+               
+            }
+            button:hover {
+                background: ($clr-white);
+                color: $clr-dark;
             }
             li{
                 list-style: none;
                 margin-top: 57px;
-                font-size: 2rem;
+                font-size: 3rem;
                 color: $clr-white;
+                
             }
         }
     }
@@ -223,7 +264,11 @@ body {
     padding: 4rem;
     &__wrapper{
         font-family: ubuntu-bold;
-        @include grid(3);
+        @include grid(1);
+
+        @include mediaQuery{
+            @include grid(3);
+        }
     }
 
     &__first{
@@ -244,6 +289,11 @@ body {
     text-align: center;
     border-radius: 500px;
     border: 2px solid #fff;
+            }
+
+            a:hover {
+                background: ($clr-accent);
+                border: 2px solid $clr-accent;
             }
         }
     }
@@ -272,10 +322,15 @@ body {
   &__title{
     h2{
     font-family: ubuntu-bold;
-    margin-top: 50px;
+    // margin-top: 50px;
     padding-bottom: 18px;
     border-bottom: 1px solid #fa858a;
     }
   
 }
+
+
+    p{
+        text-align: center;
+    }
 }

@@ -2,6 +2,8 @@
 @use "../base/" as*;
 
 .tns-controls{
+    display: none;
+    @include mediaQuery{
     @include flex(end, center);
     margin: 2rem 0;
     gap: .5rem;
@@ -23,4 +25,9 @@
     border-radius: 500px;
     border: 2px solid #fff;
     }
+    button:hover {
+        background: darken($clr-primary, 25);
+    }
+
+}
 }
