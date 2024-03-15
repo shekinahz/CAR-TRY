@@ -1,0 +1,26 @@
+@use"../abstract" as*;
+@use "../base/" as*;
+
+.tns-controls{
+    @include flex(end, center);
+    margin: 2rem 0;
+    gap: .5rem;
+
+    button{
+        background: $clr-light;
+        border: none;
+        font-size: 1.3rem;
+        margin-bottom: 2rem; //added
+    line-height: 1em;
+    -webkit-transition: 0.4s all ease;
+    transition: 0.4s all ease;
+    color: $clr-accent;
+    width: 43px;
+    height: 43px;
+    display: inline-block;
+    /* background: #fff; */
+    text-align: center;
+    border-radius: 500px;
+    border: 2px solid #fff;
+    }
+}
